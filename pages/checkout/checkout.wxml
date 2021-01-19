@@ -1,0 +1,181 @@
+<view class="container p-bottom">
+  <!-- 配送地址 -->
+  <view catchtap="selectAddress">
+    <view wx:if="{{receiver.id}}">
+      <view class="b-f">
+        <view class="flow-checkout-header">
+          <text class="iconfont icon-dingwei1"></text>
+          <view class="flow-header-left">
+            <view class="flow-checkout-admin f-30 col-3">
+              <text>{{receiver.consignee}}</text>
+              <text>{{receiver.phone}}</text>
+              <text class="col-m"></text>
+            </view>
+            <view class="flow-checkout-address">
+              {{receiver.areaName}} {{receiver.address}}
+            </view>
+          </view>
+          <view class="flow-header-right pr-12">
+            <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="flow-checkout-header">
+        <text class="iconfont icon-dingwei1"></text>
+        <view class="flow-header-left">
+          <view class="f-28 col-6">去选择配送地址
+          </view>
+        </view>
+        <view class="flow-header-right p-r15">
+          <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 商品列表 -->
+  <view class="m-top20">
+    <view class="checkout_list " wx:for="{{orderItems}}" wx:key="this">
+      <navigator url="../product/detail?productId={{item.productId}}">
+        <view class="dis-flex flow-shopList" data-index="{{index}}">
+          <view class="flow-list-left">
+            <image mode="scaleToFill" src="{{item.thumbnail}}"></image>
+          </view>
+          <view class="flow-list-right">
+            <text class="f-30 col-3 twolist-hidden">{{item.orderItemName}}</text>
+            <text class="f-26 col-7">{{item.specifications}}</text>
+            <view class="flow-list-cont">
+              <text class="flow-cont">￥{{item.price}}×{{item.quantity}}</text>
+              <text class="small">￥{{item.subtotal}}</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="flow-num-box b-f padding-box">
+      <text>共{{quantity}}件商品，合计：</text>
+      <text class="flow-money col-m">￥{{price}}</text>
+    </view>
+  </view>
+
+  <!-- 商品金额 -->
+  <view class="flow-all-money b-f padding-box m-top20">
+
+   
+
+
+    <view class="dis-flex flow-all-list">
+      <text class="flex-five">配送费用:</text>
+      <view class="flex-five t-r">
+        <view wx:if="{{receiver.id}}">
+          <text class="col-m" wx:if="{{true}}">+￥{{freight}}</text>
+          <text wx:else>不在配送范围</text>
+        </view>
+        <view wx:else>
+          <text class="col-7">请先选择配送地址</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="dis-flex flow-all-list">
+      <text class="flex-five">应付金额:</text>
+      <view class="flex-five t-r">
+        <text class="col-m">￥{{amount}}</text>
+      </view>
+    </view>
+    
+    <view class="dis-flex flow-all-list">
+     <text> 可用余额:</text>  <text style="color:red;" >  {{userBalance}}</text>     
+     <checkbox-group class="checkbox" bindchange="checkboxChange" >
+       <checkbox   value="{{userBalance}}" ></checkbox>使用余额支付请勾选
+    </checkbox-group>
+    </view>
+
+    <view class="dis-flex flow-all-list">
+      <text>已付:</text>  <text style="color:red;" > {{balance}}</text>     
+    </view>
+
+    <view class="dis-flex flow-all-list">
+      <text>剩余应付:</text>  <text style="color:red;" > {{we.toFixed(amountPayable)}}</text>     
+    </view>
+
+ <view class="conten">
+  <view class="header">
+
+  </view>
+  <view class="body">
+    <view class="data" bindtap="share">
+      <view class="dis-flex flow-all-list">
+          <text>开具发票:</text> 
+        <checkbox-group class="checkbox"  >
+          <checkbox  ></checkbox>
+        </checkbox-group>
+      </view>
+    </view>
+
+    <view class="share">
+      <text class="xiao_zi">温馨提示：使用小象网乐购余额支付，货到积分卡支付不再开具报销发票。电器类商品保修发票默认随机附带，此处不需要填写。使用电子优惠券参与订单结算时，不再开具报销发票。预售订单仅可自提。</text>
+    </view>
+
+    <view class="share" wx:if="{{shows}}">
+      <view class="list address-box dis-flex">
+        <view class="left-name">
+          <text class="f-30">发票抬头：</text>
+        </view>
+        <view class="right-cont flex-box">
+            <input  bindinput="getInvoiceTitle" type="text"  name="invoiceTitle" value="{{invoiceTitle}}"  placeholder="请输入发票抬头"  ></input>
+        </view>
+      </view>
+
+      <view class="list address-box dis-flex">
+        <view class="left-name">
+          <text class="f-30">税号：</text>
+        </view>
+        <view class="right-cont flex-box">
+            <input bindinput="getInvoiceTaxNumber" type="text"  name="invoiceTaxNumber" value="{{invoiceTaxNumber}}" placeholder="请输入税号" ></input>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <view class="list address-box dis-flex">
+      <view class="left-name">
+        <text class="f-30">附言：</text>
+      </view>
+      <view class="right-cont flex-box">
+          <input bindinput="getMemo" type="text"  name="memo" value="{{memo}}" placeholder="请输入附言" ></input>
+      </view>
+  </view>
+      
+</view>
+
+
+  <!-- 提交订单 -->
+  <view class="flow-fixed-footer b-f m-top10">
+    <view class="dis-flex chackout-box">
+      <view class=" chackout-left pl-12 ">实付款：
+        <text class="col-m">￥{{we.toFixed(amountPayable)}}</text>
+      </view>
+      <view bindtap="submitOrder" class="chackout-right">
+        <text class="flow-btn">订单结算</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷导航 -->
+  <shortcut></shortcut>
+
+</view>
+
+<wxs module="we">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

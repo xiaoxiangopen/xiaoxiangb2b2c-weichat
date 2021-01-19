@@ -1,0 +1,39 @@
+<view class="container m-b6 p-bottom">
+  <view class="common-header-xian"></view>
+  <custom-ul class="addres-list" wx:if="{{list.length}}">
+    <custom-li wx:for="{{list}}" wx:for-item="item" wx:key="this">
+      <view class="address-header b-f m-top18">
+        <view class="flow-header-left pl-12">
+          <view class="flow-checkout-admin">{{item.name}}
+            <view class="flow-checkout-address">
+            满 {{item.minimumPrice}}可用 ￥： {{item.amout}}
+          </view>
+          </view>
+          <view class="flow-checkout-address">
+            有效期： {{item.beginDate}}—{{item.endDate}}
+          </view>
+        </view>
+      </view>
+      <view class="address-list dis-flex b-f">
+        <view class="list address-left">
+          <radio-group bindchange="setDefault" class="radio-group">
+            <label class="radio">
+              <radio color="#ff495e" value="{{item.code}}"></radio>
+              <text class="cont">选择</text>
+              <!-- <text class="cont" wx:else>选择</text> -->
+            </label>
+          </radio-group>
+        </view>
+      
+      </view>
+    </custom-li>
+  </custom-ul>
+  <view wx:else>
+    <view class="xiaoxiangshop-notcont">
+      <text class="iconfont icon-wushuju"></text>
+      <text class="cont">亲，您还没有优惠券列表</text>
+    </view>
+  </view>
+</view>
+<!-- 快捷导航 -->
+<shortcut></shortcut>

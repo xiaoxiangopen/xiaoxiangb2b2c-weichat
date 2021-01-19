@@ -1,0 +1,29 @@
+.checkout_list {
+  padding: 10px 15px 2px 15px;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.checkout_list .flow-shopList {
+  padding: 5rpx 0 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.checkout_list .flow-shopList:last-child {
+  border-bottom: 0;
+}
+
+.flow-header-left {
+  padding-left: 90rpx;
+}
+.checkbox {
+  padding-left: 120rpx;
+  font-size: 22rpx;
+  color: red;
+}
+.xiao_zi {
+  font-size: 22rpx;
+  color: red;
+}
+
+

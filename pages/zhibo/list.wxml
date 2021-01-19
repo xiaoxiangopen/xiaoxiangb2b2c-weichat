@@ -1,0 +1,22 @@
+
+<view class="schoollist">
+  <view wx:if="{{list.length}}">
+      <block wx:for="{{list}}" wx:key="item">
+        <view class="school-list">
+          <navigator url="../zhibo/index?roomId={{item.roomid}}">
+            <view class="school-list-info" index="{{index}}">
+              <image class="school-list-photo" src="{{item.share_img}}"/>
+              <text class="school-list-time">开播时间:{{item.start_time}}</text>
+              <text class="school-list-desc">{{item.name}}</text>
+            </view>
+          </navigator>
+        </view>
+      </block>
+  </view>
+  <view wx:else>
+        <view class="yoshop-notcont">
+          <text class="iconfont icon-ziyuan"></text>
+          <text class="cont">暂无直播场次安排，敬请期待！</text>
+        </view>
+  </view>
+</view>

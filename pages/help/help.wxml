@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="help cont-box b-f" wx:for="{{list}}" wx:key="this">
+    <view>
+      <text class="h4">{{item.title}}</text>
+    </view>
+    <view>
+      <text class="p">{{item.content}}</text>
+    </view>
+  </view>
+    
+    <!-- 在线客服 -->
+    <view class="goods-fixed-icon dis-flex flex-x-center flex-y-center help cont-box b-f h5">
+      <button open-type="contact" sessionFrom="weapp" size="27" style="opacity: 0;position:absolute;top:0px;left:0px;display:block;width:100%;height:100%;" type="default-light"></button>
+      <text class="h4">在线客服：</text><text class="iconfont icon-icon_service p"></text>
+    </view>
+
+</view>

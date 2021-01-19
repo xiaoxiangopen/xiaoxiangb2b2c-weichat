@@ -1,0 +1,25 @@
+<view class="container m-b5">
+  <view class="goods-detail-box">
+    <view class="header f-28 col-3">
+      <view catchtap="bindHeaderTap" data-type="">账户金额</view>
+    </view>
+    <scroll-view scroll-y="{{true}}">
+      <view class="wrapper">
+        <view wx:if="{{list.length}}">
+          <view class="m-top20" wx:for="{{list}}" wx:key="this">
+            <!-- 创建日期: -->
+            <view class="tcp_log">{{item.type}}<text class="view_text_show_1" >{{item.createdDate}} </text></view>
+            <view class="tcp_log"> 收入金额:<text class="view_text_show">{{item.credit}}</text> </view>
+            <view class="tcp_log"> 支出金额:<text class="view_text_show">{{item.debit}} </text></view>
+            <view class="tcp_log"> 当前余额:<text class="view_text_show">{{item.balance}}</text> </view>
+        
+          </view>
+        </view>
+      
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 快捷导航 -->
+<shortcut></shortcut>

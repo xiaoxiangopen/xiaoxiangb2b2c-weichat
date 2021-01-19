@@ -1,0 +1,110 @@
+<view class="container p-bottom" wx:if="{{order.sn}}">
+  <scroll-view scroll-y="true">
+
+    <!-- 收货地址 -->
+    <view class="b-f">
+      <view class="flow-checkout-header b-f dis-flex">
+        <view class="flow-header-left padding-box">
+          <view class="flow-checkout-admin f-26 col-3">{{order.consignee}}
+            <text class="f-26 col-m">{{order.phone}}</text>
+          </view>
+          <view class="flow-checkout-address">
+            {{order.areaName}} {{order.address}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 物流信息 -->
+    <view class="flow-all-money b-f padding-box m-top20" wx:if="{{order.status.value == 3}}">
+      <view class="dis-flex flow-all-list-cont">
+        <text class="col-7">快递公司: {{order.deliveryCorp}}</text>
+      </view>
+      <view class="dis-flex flow-all-list-cont">
+        <text class="col-7" selectable="{{true}}">快递单号: {{order.trackingNo}}</text>
+      </view>
+    </view>
+
+    <!-- 商品列表 -->
+    <view class="order-cont b-f m-top20">
+      <view class="padding-box b-f">
+        <view class="order-header dis-flex">
+          <view class="flex-box t-l">
+            <text class="title">商品列表</text>
+          </view>
+          <view class="flex-box t-r">
+            <text class="col-m">{{order.status.text}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="padding-box b-f">
+        <view class="order-cont dis-flex">
+          <view class="order-num">
+            <text selectable="{{true}}">订单号：{{order.sn}}</text>
+          </view>
+          <view class="order-time">
+            <text>{{order.createdDate}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="padding-box b-f">
+      <view bindtap="goodsDetail" class="dis-flex flow-shopList b-f" data-id="{{item.id}}" wx:for="{{order.items}}" wx:key="this">
+        <view class="flow-list-left">
+          <image mode="scaleToFill" src="{{item.thumbnail}}"></image>
+        </view>
+        <view class="flow-list-right">
+          <text class="h4 twolist-hidden">{{item.itemName}}</text>
+          <text class="p f-22 col-7">{{item.specifications}}</text>
+          <view class="flow-list-cont">
+            <text class="flow-cont">￥{{item.price}}</text>
+            <text class="small">×{{item.quantity}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="select b-f">
+      <view class="flow-num-box b-f">共 {{order.quantity}} 件商品，合计：
+        <text class="flow-money">{{order.skuTotal}}</text>
+      </view>
+    </view>
+
+
+    <!-- 订单金额 -->
+    <view class="flow-all-money b-f padding-box m-top20">
+      <view class="dis-flex flow-all-list">
+        <text class="flex-five">订单金额</text>
+      </view>
+      <view class="dis-flex flow-all-list-cont">
+        <text class="flex-five col-7">商品金额:</text>
+        <text class="flex-five col-m t-r">￥{{order.skuTotal}}</text>
+      </view>
+      <view class="dis-flex flow-all-list-cont">
+        <text class="flex-five col-7">配送费用:</text>
+        <text class="flex-five col-m t-r">+￥{{order.freight}}</text>
+      </view>
+      <view class="dis-flex flow-all-list-cont">
+        <text class="flex-five col-7">应付金额:</text>
+        <text class="flex-five col-m t-r">￥{{order.amountPayable}}</text>
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <view class="flow-fixed-footer b-f">
+    <view class="dis-flex chackout-box">
+      <view bindtap="cancel" wx:if="{{order.qx==true}}" class="flex-box chackout-left-detail t-c">
+        取消订单
+      </view>
+      <view wx:if="{{order.zf==true}}"  class="flex-box chackout-right-detail">
+        <text bindtap="payment" class="flow-btn" wx:if="{{order.status.value==0}}">去付款</text>
+      </view>
+    </view>
+    <view class="flow-btn h3"  wx:if="{{order.qr==true}}">
+      <view bindtap="receive">确认收货</view>
+    </view>
+  </view>
+
+</view>
