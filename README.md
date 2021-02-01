@@ -89,6 +89,9 @@ bootstrap.system_call_filter: false
 1. 商城PC及服务端地址：https://gitee.com/xiaoxiangopen/xiaoxiangb2b2c/
 2. 前端小程序地址：https://gitee.com/xiaoxiangopen/xiaoxiangb2b2c-weichat
 
+#### 软著
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0201/103942_26048a33_5325125.png "b2b2c软著.png")
+
 
 #### 用户权益
 
