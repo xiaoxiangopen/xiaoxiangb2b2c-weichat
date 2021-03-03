@@ -22,9 +22,9 @@
             <view class="cate-cont-box">
               <view class="flex-three" data-list="{{index}}" wx:for="{{list[curIndex].childrens}}" wx:key="cit">
                 <navigator hover-class="none" url="../category/list?productCategoryId={{item.id}}">
-                  <!-- <view class="cate-img" id="{{item.file_id}}">
+                  <view class="cate-img" id="{{item.id}}">
                     <image src="{{item.image}}"></image>
-                  </view> -->
+                  </view>
                   <text class="onelist-hidden">{{item.name}}</text>
                 </navigator>
               </view>
