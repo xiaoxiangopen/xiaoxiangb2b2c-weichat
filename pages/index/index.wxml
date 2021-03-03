@@ -29,41 +29,56 @@
                 <text>{{item.name}}</text>
               </view>
 
-
+              <text class="price col-m f-30"><text wx:if="{{item.skuPromotionPro==true||item.promotionSize==1}}" >促</text>  ￥{{item.price}}</text>
             </view>
           </navigator>
         </scroll-view>
       </view>
     </view>
-
-    <!-- 猜您喜欢   -->
-     <!-- <view class="title-hrbg" style="margin-top:10rpx">
-      <text class="cont">
-        <text class="iconfont icon-huo col-m"></text>猜您喜欢
-      </text>
-      <view class="hr"></view>
-    </view>
-    <view class="category-list">
-      <navigator class="list b-f" hover-class="none" url="../product/detail?productId={{item.id}}" wx:for="{{likes}}" wx:key="this">
-        <view class="left">
-          <view class="img">
-            <image class="goodsImg" mode="scaleToFill" src="{{item.thumbnail}}"></image>
+ 
+  <!-- 横向导航 -->
+    <view>
+      <view class="bt-text">
+        <scroll-view class="tabBox" scroll-x="true">
+          <view class="tabTtle b-f t-c f-32 col-3 {{item.id == curNav ? 'active' : ''}}" bindtap="selectNav" 
+          wx:for="{{productCategories}}" wx:key="this" data-id="{{ item.id }}" >
+            {{item.name}}
           </view>
-        </view>
-        <view class="right">
-          <view class="cont">
-            <text class="f-30 title twolist-hidden m-top10">{{item.name}}</text>
-             <text class="price f-34 col-m f-w">￥{{item.price}}</text>
+        </scroll-view>
+      </view>
+      <view class="jingx">
+        <scroll-view bindscrolltolower="bindDownLoad" class="weui-panel weui-panel_access" scroll-y="true" style="height: {{scrollHeight}}px; width: 750rpx;" wx:if="{{list.productItems.length > 0}}">
+        <view class="new">
+          <view class="category-list {{arrange}}">
+              <navigator class="list b-f" hover-class="none" url="../product/detail?productId={{item.id}}" wx:for="{{list.productItems}}" wx:key="list">
+                <view class="left">
+                  <view class="img">
+                    <image class="goodsImg" mode="scaleToFill" src="{{item.thumbnail}}"></image>
+                  </view>
+                </view>
+                <view class="right">
+                  <view class="cont">
+                    <text class="f-30 title twolist-hidden m-top10">{{item.name}}</text>
+                    <view class="price f-34 col-m m-top10">
+                      <text wx:if="{{item.skuPromotionPro==true||item.promotionSize==1}}" >促</text> ￥{{item.price}}
+                      <text class="del f-22" wx:if="{{item.marketPrice>0}}">市场价:￥{{item.marketPrice}}</text>
+                    </view>
+                  </view>
+                </view>
+              </navigator>
+            </view>
           </view>
-        </view>
-      </navigator>
-    </view> -->
+              <view hidden="{{!no_more}}" class="no-more f-30">亲, 没有更多了</view>
+          </scroll-view>
+  </view>
+  </view>
+ 
 
     <!-- 底线 -->
-    <view class="title-footer p-r">
+    <!-- <view class="title-footer p-r">
       <text class="f-24 col-9 cont">我是有底线的</text>
       <view class="hr"></view>
-    </view>
+    </view> -->
   </scroll-view>
 
   <!-- 返回顶部 -->

@@ -73,3 +73,46 @@
   height: 40rpx;
   text-align: center;
 }
+
+.bt-text {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  background: #fff;
+}
+.tabBox {
+  white-space: nowrap;
+  border-bottom: solid 1px #e6e6e6;
+  padding-left: 10px;
+}
+.tabTtle {
+  padding: 10px 15px;
+  display: inline-block;
+}
+.tabTtle.active {
+  color: red;
+  border-bottom: solid 1px red;
+}
+.bt-contents {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0 0 5px;
+}
+.conNav {
+  width: 50%;
+}
+.con-item {
+  margin: 0 10px 10px 0;
+  background: #fff;
+  padding: 10px;
+}
+.itemImg {
+  width: 100%;
+  height: 134px;
+} 
+.shopName {
+  font-size: 26rpx;
+  margin: 5rpx 10rpx;
+  width: 100%;
+}
