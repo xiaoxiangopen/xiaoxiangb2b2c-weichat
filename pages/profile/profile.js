@@ -8,13 +8,16 @@ Page({
   data: {
     member: {},
     shows:true,
-    infoShows:true
+    infoShows:true,
+    option: {},
+    pageNumber: 1,
+    scrollHeight: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (option) {
 
     var that = this;
     // console.log('xx:'+wx.getStorageSync('user_id'));
@@ -30,6 +33,13 @@ Page({
       })
     }
 
+    // 设置商品列表高度
+    that.setListHeight();
+     // 记录option
+     that.setData({ option }, function () {
+      // 获取商品列表
+      that.getProductList(true);
+    });
   },
 
   /**
@@ -37,6 +47,54 @@ Page({
    */
   onReady: function () {
     
+  },
+
+  
+  /**
+   * 获取商品列表
+   */
+  getProductList: function (is_super, pageNumber) {
+    let _this = this;
+    App._get('/api/product/list', {
+      pageNumber: pageNumber || 1,
+      orderType: 'PRICE_DESC',
+      productCategoryId: 0
+    }, function (result) {
+      let resultList = result.data
+        , dataList = _this.data.list;
+      if (is_super === true || typeof dataList === 'undefined') {
+        _this.setData({ list: resultList, noList: false });
+      } else {
+        _this.setData({ 'list.productItems': dataList.productItems.concat(resultList.productItems) });
+      }
+      
+    });
+  },
+
+    /**
+   * 下拉到底加载数据
+   */
+  bindDownLoad: function () {
+    // 已经是最后一页
+    if (this.data.pageNumber >= this.data.lastPage) {
+      this.setData({ no_more: true });
+      return false;
+    }
+    this.getProductList(false, ++this.data.pageNumber);
+  },
+
+  /**
+   * 设置商品列表高度
+   */
+  setListHeight: function () {
+    let _this = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        _this.setData({
+          scrollHeight: res.windowHeight - 90,
+        });
+      }
+    });
   },
 
   /**

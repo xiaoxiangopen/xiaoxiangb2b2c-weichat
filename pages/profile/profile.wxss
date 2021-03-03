@@ -138,3 +138,50 @@
   align-content: center;
   margin-top:5px;
 }
+.yh {
+  background: #fff;
+  margin-top: 10px;
+  padding: 10px 0 15px 0;
+}
+.jingx {
+  width: 100%;
+  margin-top: 10px;
+
+  background: #fff;
+}
+.jx-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  border-bottom: solid 1px #e8e8e8;
+  padding-left: 5px;
+}
+.jx-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.jx-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 5px;
+}
+.conNav {
+  width: 50%;
+}
+.con-item {
+  margin: 0 10px 10px 0;
+  background: #fff;
+  padding: 10px;
+}
+.itemImg {
+  width: 100%;
+  height: 134px;
+} 
+.shopName {
+  font-size: 26rpx;
+  margin: 5rpx 10rpx;
+  width: 100%;
+}

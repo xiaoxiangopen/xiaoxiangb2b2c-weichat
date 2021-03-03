@@ -17,8 +17,8 @@
         </view>
         <view  class="hide_item" wx:if="{{infoShows}}">
           <text class="show_text">等 级：{{member.memberRankName==null?"":member.memberRankName}}</text>
-          <text class="show_text">卡 号：{{member.numNo==null?"":member.numNo}}</text>
-          <!-- <text class="show_text">余 额：{{member.balance==null?"0":member.balance}}</text> -->
+          <!-- <text class="show_text">卡 号：{{member.numNo==null?"":member.numNo}}</text> -->
+          <text class="show_text">余 额：{{member.balance==null?"0":member.balance}}</text>
           <text class="show_text">积 分：{{member.point==null?"0":member.point}}</text>
         </view>
   
@@ -62,6 +62,7 @@
           </form>
         </view>
 
+
         <view class="order-navbar-item flex-box"> 
           <form bindsubmit="onTargetOrder" data-type="pending" report-submit="true"> 
             <button formType="submit" class="btn-normal"> 
@@ -81,7 +82,6 @@
             </button> 
           </form> 
         </view> 
- 
 
         <view class="order-navbar-item flex-box">
           <form bindsubmit="onTargetOrder" data-type="received" report-submit="true">
@@ -92,13 +92,7 @@
             </button>
           </form>
         </view>
-
-        <!-- <view class="order-navbar-item flex-box">
-          <text class="order-navbar__icon iconfont icon-daipingjia"></text>
-          <text class="order-navbar__name">待评价</text>
-          <text class="order-badge" wx:if="{{ false }}"></text>
-        </view> -->
-
+ 
           <view   class="order-navbar-item flex-box">
             <form  bindsubmit="onTargetMenus" data-url="pages/orderplus/list"  data-type="received" report-submit="true">
               <button formType="submit" class="btn-normal">
@@ -108,89 +102,92 @@
               </button>
             </form>
           </view>
-
-          <!-- <view   class="order-navbar-item flex-box">
-            <form  bindsubmit="onTargetMenus" data-url="pages/orderplus/log"  data-type="received" report-submit="true">
-              <button formType="submit" class="btn-normal">
-                <text class="order-navbar__icon iconfont icon-form"></text>
-                <text class="order-navbar__name">账户余额</text>
-                <text class="order-badge" wx:if="{{ false }}"></text>
-              </button>
-            </form>
-          </view> -->
-
       </view>
-
     </view>
   
   </view>
 
-  <!-- 分割线 -->
-  <!-- 菜单列表 -->
-  <view class="menus-list m-top20">
-
- 
 
 
-    <form  bindsubmit="onTargetMenus" data-url="pages/orderplus/log" report-submit="true">
-      <button formType="submit" class="btn-normal">
-        <view class="menus-item dis-flex b-f">
-          <view class="menus-item__left flex-box dis-flex flex-y-center">
-            <text class="iconfont icon-map f-34"></text>
-            <text class="menus-item__name f-30">账户余额</text>
-            <text class="menus-item__name f-30" style="color:red;">{{member.balance}}</text>
-          </view>
-          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
-            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
-          </view>
-        </view>
-      </button>
-    </form>
-    <form bindsubmit="onTargetMenus" data-url="pages/receiver/list" report-submit="true">
-      <button formType="submit" class="btn-normal">
-        <view class="menus-item dis-flex b-f">
-          <view class="menus-item__left flex-box dis-flex flex-y-center">
-            <text class="iconfont icon-map f-34"></text>
-            <text class="menus-item__name f-30">收货地址</text>
-          </view>
-          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
-            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
-          </view>
-        </view>
-      </button>
-    </form>
+  <!-- 其他按钮等 -->
+<view class="yh">
+  <view class="order-navbar-footer dis-flex m-top10">
 
+    <view class="order-navbar-item flex-box">
+        <form  bindsubmit="onTargetMenus" data-url="pages/orderplus/log"  report-submit="true">
+          <button formType="submit" class="btn-normal">
+            <text class="order-navbar__icon iconfont icon-form"></text>
+            <text class="order-navbar__name">资金变动</text>
+            <text class="order-badge" wx:if="{{ false }}"></text>
+          </button>
+        </form>
+    </view>
 
-    <form bindsubmit="onTargetMenus" data-url="pages/help/help" report-submit="true">
-      <button formType="submit" class="btn-normal">
-        <view class="menus-item dis-flex b-f">
-          <view class="menus-item__left flex-box dis-flex flex-y-center">
-            <text class="iconfont icon-help f-34"></text>
-            <text class="menus-item__name f-30">我的帮助</text>
-          </view>
-          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
-            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
-          </view>
-        </view>
-      </button>
-    </form>
+    <view class="order-navbar-item flex-box">
+        <form  bindsubmit="onTargetMenus" data-url="pages/receiver/list"  report-submit="true">
+          <button formType="submit" class="btn-normal">
+            <text class="order-navbar__icon iconfont icon-daishouhuo"></text>
+            <text class="order-navbar__name">收货地址</text>
+            <text class="order-badge" wx:if="{{ false }}"></text>
+          </button>
+        </form>
+    </view>
 
+    <view class="order-navbar-item flex-box">
+        <form  bindsubmit="onTargetMenus" data-url="pages/help/help"  report-submit="true">
+          <button formType="submit" class="btn-normal">
+            <text class="order-navbar__icon iconfont icon-form"></text>
+            <text class="order-navbar__name">我的帮助</text>
+            <text class="order-badge" wx:if="{{ false }}"></text>
+          </button>
+        </form>
+    </view>
 
-    <form  bindsubmit="onTargetMenus" data-url="pages/zhibo/list" report-submit="true">
-      <button formType="submit" class="btn-normal">
-        <view class="menus-item dis-flex b-f">
-          <view class="menus-item__left flex-box dis-flex flex-y-center">
-            <text class="iconfont icon-map f-34"></text>
-            <text class="menus-item__name f-30">直播</text>
-          </view>
-          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
-            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
-          </view>
-        </view>
-      </button>
-    </form>
+    <view class="order-navbar-item flex-box">
+        <form  bindsubmit="onTargetMenus" data-url="pages/zhibo/list"  report-submit="true">
+          <button formType="submit" class="btn-normal">
+            <text class="order-navbar__icon iconfont icon-form"></text>
+            <text class="order-navbar__name">直播</text>
+            <text class="order-badge" wx:if="{{ false }}"></text>
+          </button>
+        </form>
+    </view>
 
+    </view>
+</view>
+
+<!-- 精选推荐 -->
+<view class="jingx">
+  <view class="jx-title">
+    <image class="jx-img" src="../../images/navImg/1.png"></image>
+    <view>精选推荐</view>
   </view>
+
+  <scroll-view bindscrolltolower="bindDownLoad" class="weui-panel weui-panel_access" scroll-y="true" style="height: {{scrollHeight}}px; width: 750rpx;" wx:if="{{list.productItems.length > 0}}">
+
+<view class="new">
+  <view class="category-list {{arrange}}">
+    <navigator class="list b-f" hover-class="none" url="../product/detail?productId={{item.id}}" wx:for="{{list.productItems}}" wx:key="list">
+      <view class="left">
+        <view class="img">
+          <image class="goodsImg" mode="scaleToFill" src="{{item.thumbnail}}"></image>
+        </view>
+      </view>
+      <view class="right">
+        <view class="cont">
+          <text class="f-30 title twolist-hidden m-top10">{{item.name}}</text>
+          <view class="price f-34 col-m m-top10">
+            <text wx:if="{{item.skuPromotionPro==true||item.promotionSize==1}}" >促</text> ￥{{item.price}}
+            <text class="del f-22" wx:if="{{item.marketPrice>0}}">市场价:￥{{item.marketPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view hidden="{{!no_more}}" class="no-more f-30">亲, 没有更多了</view>
+</scroll-view>
+</view>
 </view>
 
  
