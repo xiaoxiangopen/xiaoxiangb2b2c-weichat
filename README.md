@@ -22,7 +22,8 @@
 1. PC和H5商城：https://weixin.xiaoxiangai.com 测试账户：jack/123456
 2. 商家连接：https://weixin.xiaoxiangai.com/business  测试账户：business/123456
 3. 总后台：https://weixin.xiaoxiangai.com/admin 测试账户：admin/123456
-4. 小程序商城：
+4. 商城后台代码Git地址：https://gitee.com/xiaoxiangopen/xiaoxiangb2b2c
+5. 小程序商城：
 - ![输入图片说明](https://images.gitee.com/uploads/images/2021/0225/175527_375a7b51_5325125.jpeg "xiaoxiangweicha.png")
 
 #### 软件架构
