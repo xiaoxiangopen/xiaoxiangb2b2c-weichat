@@ -15,7 +15,7 @@
 
 5.微信群
 
-- ![输入图片说明](https://images.gitee.com/uploads/images/2021/0310/125855_af65a4dc_8629837.png "微信图片_20210310125408.png")
+- ![输入图片说明](https://images.gitee.com/uploads/images/2021/0311/181222_5f2ff8af_8629837.png "1.png")
 
 
 #### 演示环境
