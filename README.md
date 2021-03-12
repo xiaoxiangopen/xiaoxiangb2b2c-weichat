@@ -42,10 +42,10 @@
 #### 推荐运行环境
 1. 操作系统：Linux、Unix、Windows
 2. JDK：JDK 1.8
-3. 应用服务器：Tomcat 7.0
-4. 数据库：MySQL 5.6 +
-5. Redis：3.2
-6. Elasticsearch：6.7.0
+3. 应用服务器：Tomcat 8.5
+4. 数据库：MySQL 5.7 +
+5. Redis：6.0
+6. Elasticsearch：6.5
 
 
 #### 安装教程
