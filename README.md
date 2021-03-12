@@ -30,11 +30,11 @@
 1. 核心框架：Spring Boot 2.0.3.RELEASE
 2. 安全框架：Apache Shiro 1.4.0
 3. 视图框架：Spring MVC 5.0.6
-4. 搜索框架：Elasticsearch 6.7.0
+4. 搜索框架：Elasticsearch 6.5.0
 5. 任务调度：Spring + Quartz 2.2.3
 6. 持久层框架：MyBatis 3.4.6 + Mybatis-plus 2.3
 7. 数据库连接池：Alibaba Druid 1.1.10
-8. 缓存框架：Ehcache 2.6 + Redis 3.2  
+8. 缓存框架：Ehcache 2.6 + Redis 6.0  
 9. 日志管理：SLF4J 1.7 + Log4j2 2.7
 10. 工具类：Apache Commons、Jackson 2.9.6、fastjson 1.2.6
 
