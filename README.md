@@ -34,7 +34,7 @@
 5. 任务调度：Spring + Quartz 2.2.3
 6. 持久层框架：MyBatis 3.4.6 + Mybatis-plus 2.3
 7. 数据库连接池：Alibaba Druid 1.1.10
-8. 缓存框架：Ehcache 2.6 + Redis 3.2
+8. 缓存框架：Ehcache 2.6 + Redis 3.2  
 9. 日志管理：SLF4J 1.7 + Log4j2 2.7
 10. 工具类：Apache Commons、Jackson 2.9.6、fastjson 1.2.6
 
@@ -98,6 +98,11 @@ bootstrap.system_call_filter: false
 
 #### 软著
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0201/103942_26048a33_5325125.png "b2b2c软著.png")
+
+#### 高新技术认证
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0312/141619_50fcfb45_8629837.jpeg "微信图片_20210312141445.jpg")
+
+
 
 
 #### 用户权益
