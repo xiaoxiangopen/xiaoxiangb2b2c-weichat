@@ -54,8 +54,8 @@
 
 
 - 确保您的电脑已安装JDK 1.8,Eclipse或别的开发工具；
-- 确保你的电脑上已经下载安装MySQL 5.6+
-- 安装elasticsearch-6.7.0。常见错误帮助（https://www.cnblogs.com/yijialong/p/9707238.html）：
+- 确保你的电脑上已经下载安装MySQL 5.7+
+- 安装elasticsearch-6.5.0。常见错误帮助（https://www.cnblogs.com/yijialong/p/9707238.html）：
 
 启动elasticsearch 报如下错误：
 [2017-05-10T10:04:50,648][WARN ][o.e.b.JNANatives         ] unable to install syscall filter: 
