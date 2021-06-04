@@ -11,13 +11,10 @@
 
 1. 官网地址：https://www.xiaoxiangai.com
 2. 产品销售政策：https://www.xiaoxiangai.com/index.php/32265-4/
-3. 技术交流QQ群：958957921
+3. 技术交流QQ群：958957921    请备注：github小象电商
 4. 微信：mzv988
 - ![输入图片说明](https://images.gitee.com/uploads/images/2021/0201/105231_685d973a_5325125.png "xiaoxiangopen.png")
 
-5.微信群
-
-- ![输入图片说明](https://images.gitee.com/uploads/images/2021/0311/181222_5f2ff8af_8629837.png "1.png")
 
 
 #### 演示环境
