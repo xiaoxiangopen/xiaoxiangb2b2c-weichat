@@ -14,8 +14,12 @@
 4. 微信：mzv988
 - ![输入图片说明](https://images.gitee.com/uploads/images/2021/0201/105231_685d973a_5325125.png "xiaoxiangopen.png")
 
-#### 获取完整演示环境请加微信：mzv988
-1. 小程序商城：
+#### 演示环境
+1. PC和H5商城：https://shop.xiaoxiangai.com/ 测试账户：jack/123456
+2. 商家连接：https://shop.xiaoxiangai.com/business  测试账户：business/123456
+3. 总后台：https://shop.xiaoxiangai.com/admin 测试账户：admin/123456
+4. 微信小程序代码Git地址：https://gitee.com/xiaoxiangopen/xiaoxiangb2b2c-weichat
+5. 小程序商城：
 - ![输入图片说明](https://images.gitee.com/uploads/images/2021/0225/175527_375a7b51_5325125.jpeg "xiaoxiangweicha.png")
 
 
